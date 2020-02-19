@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>hojun</title>
+  <title>Silent_Eの桜荘</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-02-19T05:47:28.953Z</updated>
+  <updated>2020-02-19T07:06:42.481Z</updated>
   <id>/</id>
   
   <author>
-    <name>hojun</name>
+    <name>Silent_E</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="/2020/02/19/hello-world/"/>
     <id>/2020/02/19/hello-world/</id>
     <published>2020-02-19T05:47:28.953Z</published>
-    <updated>2020-02-19T05:47:28.953Z</updated>
+    <updated>2020-02-19T07:06:42.481Z</updated>
     
     <summary type="html">
     
@@ -44,6 +44,28 @@
     <id>/2018/12/12/Hexo-Theme-Sakura/</id>
     <published>2018-12-12T14:16:01.000Z</published>
     <updated>2020-02-13T17:11:22.000Z</updated>
+    
+    <summary type="html">
+    
+      hexo-sakura主题使用教程
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="/2018/12/12/test/"/>
+    <id>/2018/12/12/test/</id>
+    <published>2018-12-12T14:16:01.000Z</published>
+    <updated>2020-02-19T07:10:13.656Z</updated>
     
     <summary type="html">
     
