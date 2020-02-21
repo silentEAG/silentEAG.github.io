@@ -30,7 +30,9 @@ menus:
   留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
   友人帐: { path: /links/, fa: fa-link faa-shake }
   关于: { path: /about/, fa: fa-leaf faa-wrench }
-
+  游戏: { path: javascript:;, fa: fa-gamepad faa-vertical, submenus: {
+    2048: {path: https://silenteag.github.io/2048.html, fa: fa-coffee }
+  } }
 
 # Home page sort type: -1: newer first，1: older first.
 homePageSortType: -1

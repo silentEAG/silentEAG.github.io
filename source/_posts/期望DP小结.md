@@ -6,24 +6,17 @@ authorLink: https://silenteag.github.io
 authorAbout: 一个好奇的人
 authorDesc: 一个好奇的人
 categories: 技术
-date: 2018-12-12 22:16:01
+date: 2019-12-07 21:18:01
 comments: true
 tags: 
 
  - 动态规划
  - 概率问题
 keywords: Sakura
-description: 这是一篇测试稿
+description: 有关期望DP的总结
 photos: https://cdn.jsdelivr.net/gh/silenteag/cdn@1.2/img/background.jpg
+incomplete: true
 ---
-
-这是一篇测试稿！！！
-
----
-
-
-
-> 喵帕斯~
 
 
 
@@ -129,7 +122,7 @@ $$
 
 少见的连续型随机变量题。
 
-最坏情况下，过一条河需要 $3*L/v$ 的时间；最好的情况下，过一条河需要 $L/v$ 的时间，又因为船的位置随机，所以过河时间**线性分布**，于是期望取个平均值 $2*L/v$ 就行了。
+最坏情况下，过一条河需要 $3*\frac{L}{v}$ 的时间；最好的情况下，过一条河需要 $\frac{L}{v}$ 的时间，又因为船的位置随机，所以过河时间**线性分布**，于是期望取个平均值 $2*\frac{L}{v}$ 就行了。
 
 #### [掷骰子](https://www.luogu.org/problemnew/show/SP1026)
 
@@ -236,7 +229,7 @@ inline void ouot() {
 
 由于每一轮打出一张卡后，该轮结束，所以每张卡在$r$轮中被打出的概率与在它前面有多少张卡被打出有关。
 
-设$f[i][j]$表示在$r$轮中，前$i$张卡被打出了$j$张的概率，在此情况下，第$i+1$张牌在$r$轮中有$(1-p[i+1])^{r-j}$的概率未被打出，再用$1$减去，就得到了打出的概率。所以枚举$k$得到：$dp[i]=\sum f[i-1][k]*(1-(1-p[i])^{r-k})$。
+设$f[i][j]$表示在$r$轮中，前$i$张卡被打出了$j$张的概率，在此情况下，第$i+1$张牌在$r$轮中有$(1-p[i+1])^{r-j}$的概率未被打出，再用$1$减去，就得到了打出s的概率。所以枚举$k$得到：$dp[i]=\sum f[i-1][k]*(1-(1-p[i])^{r-k})$。
 
 现在考虑如何计算$f[i][j]$。
 
