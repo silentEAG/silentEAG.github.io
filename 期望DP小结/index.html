@@ -398,6 +398,16 @@
                 
               </li>
             
+              <li>
+                <a href="/games/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-gamepad faa-shake" aria-hidden="true"></i>
+                    游戏
+                  </span>
+                </a>
+                
+              </li>
+            
           </ul>
         </nav>
       </div>
@@ -441,12 +451,7 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>这是一篇测试稿！！！</p>
-<hr>
-<blockquote>
-<p>喵帕斯~</p>
-</blockquote>
-<h2 id="资源分享"><a href="#资源分享" class="headerlink" title="资源分享"></a>资源分享</h2><ul>
+          <h2 id="资源分享"><a href="#资源分享" class="headerlink" title="资源分享"></a>资源分享</h2><ul>
 <li><p><a href="http://www.matrix67.com/blog/archives/6665#more-6665" target="_blank" rel="noopener">26 个比较概率大小的问题</a></p>
 </li>
 <li><p><a href="https://45475.blog.luogu.org/mathematical-expectation" target="_blank" rel="noopener">数论小白都能看懂的数学期望讲解</a></p>
@@ -503,7 +508,7 @@ E(XY)=& \sum_i\sum_jX_iY_jP_iQ_j \\
 <p>比如数学期望的$f[x]$一般表示到了$x$这一状态还差多少，最后答案是$f[0]$。</p>
 <p>总之，该推公式的还是推，该在图上跑的还是在图上跑，只是注意状态的设计。</p>
 <h2 id="练手题目"><a href="#练手题目" class="headerlink" title="练手题目"></a>练手题目</h2><h3 id="入门："><a href="#入门：" class="headerlink" title="入门："></a>入门：</h3><h4 id="过河"><a href="#过河" class="headerlink" title="过河"></a><a href="https://www.luogu.org/problemnew/show/UVA12230" target="_blank" rel="noopener">过河</a></h4><p>少见的连续型随机变量题。</p>
-<p>最坏情况下，过一条河需要 $3<em>L/v$ 的时间；最好的情况下，过一条河需要 $L/v$ 的时间，又因为船的位置随机，所以过河时间<strong>线性分布</strong>，于是期望取个平均值 $2</em>L/v$ 就行了。</p>
+<p>最坏情况下，过一条河需要 $3<em>\frac{L}{v}$ 的时间；最好的情况下，过一条河需要 $\frac{L}{v}$ 的时间，又因为船的位置随机，所以过河时间<strong>线性分布</strong>，于是期望取个平均值 $2</em>\frac{L}{v}$ 就行了。</p>
 <h4 id="掷骰子"><a href="#掷骰子" class="headerlink" title="掷骰子"></a><a href="https://www.luogu.org/problemnew/show/SP1026" target="_blank" rel="noopener">掷骰子</a></h4><p>考虑集合中选取一个不同于已选的新数的概率，所以可以设计$DP$方程：$f[i]$表示取了$i$种数后还需取的期望值。</p>
 <p>取了$i$种数，当前取的是新数的概率是$\frac{n-i}{n}$，当前取的是集合中出现过的数的概率是$\frac{i}{n}$。所以可得到$DP$转移方程$f[i]=\frac{n-i}{n}f[i+1]+\frac{i}{n}f[i]+1$。</p>
 <p>进一步化简，得$f[i]=f[i+1]+\frac{n}{n-i}$。</p>
@@ -586,7 +591,7 @@ inline void ouot() {
 <h3 id="进阶："><a href="#进阶：" class="headerlink" title="进阶："></a>进阶：</h3><h4 id="亚瑟王"><a href="#亚瑟王" class="headerlink" title="亚瑟王"></a><a href="https://www.luogu.org/problemnew/show/P3239" target="_blank" rel="noopener">亚瑟王</a></h4><p>思考后，转化成$ans=\sum dp[i]*d[i]$，其中,$dp[i]$表示第$i$张卡在$r$轮中打出的概率。</p>
 <p>考虑如何计算$dp[i]$。</p>
 <p>由于每一轮打出一张卡后，该轮结束，所以每张卡在$r$轮中被打出的概率与在它前面有多少张卡被打出有关。</p>
-<p>设$f[i][j]$表示在$r$轮中，前$i$张卡被打出了$j$张的概率，在此情况下，第$i+1$张牌在$r$轮中有$(1-p[i+1])^{r-j}$的概率未被打出，再用$1$减去，就得到了打出的概率。所以枚举$k$得到：$dp[i]=\sum f[i-1][k]*(1-(1-p[i])^{r-k})$。</p>
+<p>设$f[i][j]$表示在$r$轮中，前$i$张卡被打出了$j$张的概率，在此情况下，第$i+1$张牌在$r$轮中有$(1-p[i+1])^{r-j}$的概率未被打出，再用$1$减去，就得到了打出s的概率。所以枚举$k$得到：$dp[i]=\sum f[i-1][k]*(1-(1-p[i])^{r-k})$。</p>
 <p>现在考虑如何计算$f[i][j]$。</p>
 <p>递推。当前的第$i$张卡选或不选。<br>选：$f[i][j]+=f[i-1][j-1]<em>(1-(1-p[i])^{r-j+1})$。$(j\neq 0)$<br>不选：$f[i][j]+=f[i-1][j]</em>((1-p[i])^{r-j})$。$(i\neq j)$</p>
 <p>边界：<br>$f[1][1]=dp[1]=1-(1-p[1])^r$<br>$f[1][0]=(1-p[1])^r$</p>
@@ -1023,6 +1028,11 @@ int main(){
 <h2 id="一点小总结"><a href="#一点小总结" class="headerlink" title="一点小总结"></a>一点小总结</h2><p>概率$DP$怎么说呢，真的还是以推$DP$式子为主，但其中有些和其它$DP$不一样，比如，概率作为状态时一般是反着来的，还有就是当一个状态的概率不好表示时，想想去表示它相反的概率，抑或者用容斥原理把概率给硬搞出来，期望同理。</p>
 <p>还有就是在$OI$的运用中，大多数题目都是离散型变量，很少连续型的，注意一下它俩的区别。</p>
 
+		  
+<hr>
+<center><img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.7.9/lazyload.gif" data-src="https://cdn.jsdelivr.net/gh/ctz45562/cdn@2.0.3/emojis/gif/23.gif"></center>
+<p style="font-size:32px;text-align:center;margin-top:-2px">施工中...</p>
+
         </div>
         <!-- .entry-content -->
         <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
@@ -1040,16 +1050,15 @@ int main(){
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
           
-            <div class="post-nepre full next">
+            <div class="post-nepre full previous">
           
-            <a href="/2018/12/12/about-myself/" rel="next">
+            <a href="/about-myself/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
               <span class="label">
-              Next Post</span>
+              Previous Post</span>
               <div class="info">
                 <h3>
                 more about myself</h3>
@@ -1057,6 +1066,7 @@ int main(){
               </div>
             </a>
           </div>
+        
         
       </section>
       
@@ -1093,7 +1103,11 @@ int main(){
 </div>
 
 
-
+<script>
+var spoiler=document.getElementsByClassName('spoiler');
+for(var i=0;i<spoiler.length;++i)
+spoiler[i].onclick=function(){this.classList.toggle("revealed");};
+</script>
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
