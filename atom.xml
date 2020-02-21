@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-02-19T07:06:42.481Z</updated>
+  <updated>2020-02-21T01:00:03.697Z</updated>
   <id>/</id>
   
   <author>
@@ -17,75 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2020/02/19/hello-world/"/>
-    <id>/2020/02/19/hello-world/</id>
-    <published>2020-02-19T05:47:28.953Z</published>
-    <updated>2020-02-19T07:06:42.481Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura/</id>
+    <title>more about myself</title>
+    <link href="/2018/12/12/about-myself/"/>
+    <id>/2018/12/12/about-myself/</id>
     <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-02-13T17:11:22.000Z</updated>
+    <updated>2020-02-21T01:00:03.697Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      关于我的更多
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="杂文" scheme="/tags/%E6%9D%82%E6%96%87/"/>
     
   </entry>
   
   <entry>
-    <title>test</title>
+    <title>期望DP小结</title>
     <link href="/2018/12/12/test/"/>
     <id>/2018/12/12/test/</id>
     <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-02-19T13:11:57.496Z</updated>
+    <updated>2020-02-21T00:59:48.429Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;资源分享&quot;&gt;&lt;a href=&quot;#资源分享&quot; class=&quot;headerlink&quot; title=&quot;资源分享&quot;&gt;&lt;/a&gt;资源分享&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a
-        
-      
+      这是一篇测试稿
     
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
+      <category term="动态规划" scheme="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="概率问题" scheme="/tags/%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
