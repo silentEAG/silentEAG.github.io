@@ -46,11 +46,11 @@ insight:
     zh: 算法学习
     en: Love for Coding
     img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/coding.jpg
-生活:
-    zh: 生活
-    en: Live
+随想:
+    zh: 随想
+    en: Thinking
     img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/writing.jpg
-
-#tag
-悦读:
+转载:
+    zh: 转载
+    en: Reproduction
     img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg

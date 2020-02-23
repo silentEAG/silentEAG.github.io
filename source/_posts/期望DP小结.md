@@ -3,8 +3,8 @@ title: 期望DP小结
 author: Silent_E
 avatar: https://cdn.jsdelivr.net/gh/silenteag/cdn@1.3/img/avatar.jpg
 authorLink: https://silenteag.github.io
-authorAbout: 一个好奇的人
-authorDesc: 一个好奇的人
+authorAbout: For the Life, For the World!
+authorDesc: For the Life, For the World!
 categories: 技术
 date: 2019-12-07 21:18:01
 comments: true
