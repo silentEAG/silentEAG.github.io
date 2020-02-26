@@ -480,49 +480,29 @@
 </ul>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>$PS$：不需要知道太多概念，能拿来用就行了。</p>
 <ul>
-<li><strong>定义</strong><br><strong>样本</strong>（$\omega$）：<strong>一次</strong>随机试验产生的<strong>一个</strong>结果。<br><strong>样本空间</strong>（$\Omega$）：<strong>一个</strong>随机试验的<strong>所有</strong>可能的结果的全体，即$\Omega=\{\omega\}$。<br><strong>事件</strong>（$A$）：某一类结果，即$A\subset\Omega$。<br><strong>基本事件</strong>（$s$）：各个互斥的事件即为基本事件。</li>
+<li><strong>定义</strong><br><strong>样本</strong>（$\omega$）：<strong>一次</strong>随机试验产生的<strong>一个</strong>结果。<br><strong>样本空间</strong>（$\Omega$）：<strong>一个</strong>随机试验的<strong>所有</strong>可能的结果的全体，即$\Omega={\omega}$。<br><strong>事件</strong>（$A$）：某一类结果，即$A\subset\Omega$。<br><strong>基本事件</strong>（$s$）：各个互斥的事件即为基本事件。</li>
 </ul>
 <p>我们借助<strong>样本空间S</strong>来定义概率。样本空间是<strong>基本事件</strong>的集合。</p>
 <ul>
-<li><strong>概率论公理</strong><br>样本空间$S$的概率分布$Pr\{\}$是一个从$S$的事件到实数的映射，它满足以下公理：<ol>
-<li><strong>非负性</strong>：对于任意事件$A$，$Pr\{A\}\geqslant 0$。</li>
-<li><strong>正则性</strong>：$Pr\{S\}=1$。</li>
-<li><strong>可列可加性</strong>：对于两个互斥事件$A$与$B$，有$Pr\{A\cup B\}=Pr\{A\}+Pr\{B\}$。更一般地，对于任意有限或无限事件序列$A_1,A_2,…,$若其两两互斥，则有：</li>
+<li><strong>概率论公理</strong><br>样本空间$S$的概率分布$Pr{}$是一个从$S$的事件到实数的映射，它满足以下公理：<ol>
+<li><strong>非负性</strong>：对于任意事件$A$，$Pr{A}\geqslant 0$。</li>
+<li><strong>正则性</strong>：$Pr{S}=1$。</li>
+<li><strong>可列可加性</strong>：对于两个互斥事件$A$与$B$，有$Pr{A\cup B}=Pr{A}+Pr{B}$。更一般地，对于任意有限或无限事件序列$A_1,A_2,…,$若其两两互斥，则有：</li>
 </ol>
 </li>
 </ul>
-<script type="math/tex; mode=display">
-Pr\{\bigcup_iA_i\}=\sum Pr\{A_i\}</script><ul>
+<p>$$<br>Pr{\bigcup_iA_i}=\sum Pr{A_i}<br>$$</p>
+<ul>
 <li><strong>期望</strong></li>
 </ul>
 <p>简单理解，期望的意义就是<strong>概率</strong>的<strong>加权平均数</strong>。</p>
 <p>假设某随机试验$X$共有$n$种互斥的事件可能发生，其中第$i$个事件发生的概率为$P_i$，价值为$X_i$，则这个随机试验的期望是$E(X)=\sum P_iX_i$。</p>
 <p>期望也可以从<strong>频率</strong>的角度来理解，我们知道如果不断重复某个随机试验，某个事件发生的频率会趋近于其概率，而将发生过所有事件的价值取平均值，这个值就会趋近于这个随机试验的期望。</p>
-<h2 id="期望的线性性质"><a href="#期望的线性性质" class="headerlink" title="期望的线性性质"></a>期望的线性性质</h2><script type="math/tex; mode=display">
-E(X+Y)=E(X)+E(Y)....(1)</script><script type="math/tex; mode=display">
-E(aX)=aE(X)..............(2)</script><script type="math/tex; mode=display">
-E(XY)=E(X)E(Y)..........(3)</script><p>证明如下</p>
-<p><strong>(1)式</strong>:</p>
-<script type="math/tex; mode=display">
-\begin{align}
-E(X+Y) =& \sum_{i,j}(X_i+Y_j)P_iQ_j\\
-=& \sum_{i, j} X_{i} P_{i} Q_{j}+\sum_{i, j} Y_{j} P_{i} Q_{j}\\
-=& \sum_{i} X_{i} P_{i} \sum_{j} Q_{j}+\sum_{j} Y_{j} Q_{j} \sum_{i} P_{i}\\
-=& \sum_{i} X_{i} P_{i}+\sum_{i} Y_{j} Q_{j}\\
-=& E(X)+E(Y)
-\end{align}</script><p><strong>(2)式</strong>:</p>
-<script type="math/tex; mode=display">
-\begin{align}
-E(aX) =& \sum_iaX_iP_i \\
-=& a\sum_iX_iP_i \\
-=& aE(X)
-\end{align}</script><p><strong>(3)式</strong>:</p>
-<script type="math/tex; mode=display">
-\begin{align}
-E(XY)=& \sum_i\sum_jX_iY_jP_iQ_j \\
-=&(\sum_iX_iP_i)(\sum_jY_jQ_j) \\
-=&E(X)E(Y)
-\end{align}</script><p>用数学归纳法可推广到多个。</p>
+<h2 id="期望的线性性质"><a href="#期望的线性性质" class="headerlink" title="期望的线性性质"></a>期望的线性性质</h2><p>$$<br>E(X+Y)=E(X)+E(Y)….(1)<br>$$</p>
+<p>$$<br>E(aX)=aE(X)…………..(2)<br>$$</p>
+<p>$$<br>E(XY)=E(X)E(Y)……….(3)<br>$$</p>
+<p>证明如下</p>
+<p><strong>(1)式</strong>:<br>$$<br>\begin{align}<br>E(X+Y) =&amp; \sum_{i,j}(X_i+Y_j)P_iQ_j\<br>=&amp; \sum_{i, j} X_{i} P_{i} Q_{j}+\sum_{i, j} Y_{j} P_{i} Q_{j}\<br>=&amp; \sum_{i} X_{i} P_{i} \sum_{j} Q_{j}+\sum_{j} Y_{j} Q_{j} \sum_{i} P_{i}\<br>=&amp; \sum_{i} X_{i} P_{i}+\sum_{i} Y_{j} Q_{j}\<br>=&amp; E(X)+E(Y)<br>\end{align}<br>$$<br><strong>(2)式</strong>:<br>$$<br>\begin{align}<br>E(aX) =&amp; \sum_iaX_iP_i \<br>=&amp; a\sum_iX_iP_i \<br>=&amp; aE(X)<br>\end{align}<br>$$<br><strong>(3)式</strong>:<br>$$<br>\begin{align}<br>E(XY)=&amp; \sum_i\sum_jX_iY_jP_iQ_j \<br>=&amp;(\sum_iX_iP_i)(\sum_jY_jQ_j) \<br>=&amp;E(X)E(Y)<br>\end{align}<br>$$<br>用数学归纳法可推广到多个。</p>
 <h2 id="期望DP"><a href="#期望DP" class="headerlink" title="期望DP"></a>期望DP</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所求结果为某事件的期望的动态规划。</p>
 <p>实际上这类动态规划并不是一个新的类型，它都是在原有的动态规划的基础上，将所求的值改成了<strong>概率</strong>和<strong>期望</strong>的相关值，换句话说，这类问题的难度其实还是在动态规划的原型上，概率和期望只是表象。</p>
 <p>现在大多数期望题就是手动找公式或者$DP$推出即可，只要处理好边界，然后写好方程，就行了。与常规的求解不同，数学期望经常逆向推出，但不全是。它的代码量很短，但思维难度明显较高。</p>
@@ -538,7 +518,7 @@ E(XY)=& \sum_i\sum_jX_iY_jP_iQ_j \\
 <p>容易对每节课的选择划分阶段，根据期望的线性性质，可以相加得到总期望。</p>
 <p>设$f[i][j][0/1]$表示前$i$节课提交了$j$次申请，当前是否申请时的期望最小体力值。那么只会从$i-1$转移过来。</p>
 <p>方程见代码。（懒癌晚期。。。）</p>
-<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+<pre><code class="cpp">#include&lt;cstdio&gt;
 #include&lt;cstdlib&gt;
 #include&lt;algorithm&gt;
 #define db double
@@ -617,7 +597,7 @@ inline void ouot() {
 <p>递推。当前的第$i$张卡选或不选。<br>选：$f[i][j]+=f[i-1][j-1]<em>(1-(1-p[i])^{r-j+1})$。$(j\neq 0)$<br>不选：$f[i][j]+=f[i-1][j]</em>((1-p[i])^{r-j})$。$(i\neq j)$</p>
 <p>边界：<br>$f[1][1]=dp[1]=1-(1-p[1])^r$<br>$f[1][0]=(1-p[1])^r$</p>
 <p>本题得到解决。（注意精度！）</p>
-<pre><code class="lang-cpp">#include&lt;cmath&gt;
+<pre><code class="cpp">#include&lt;cmath&gt;
 #include&lt;ctime&gt;
 #include&lt;queue&gt;
 #include&lt;cstdio&gt;
@@ -698,7 +678,7 @@ int main(){
 <p>请注意，$g[i]$的状态定义是：$i$不被它<strong>父亲</strong>点亮的概率，所以不管子节点鸟事。。。即<strong>默认为$v$不带电</strong>，所以我们需要把$ans[u]$除去先前乘进$f[i]$中的$v$子树中不带电的概率。</p>
 <p>即$P=\frac{g[u]\times f[u]}{1-(1-f[v]\times val(u,v))}$，$g[v]=P+(1-P)\times (1-val(u,v))$。</p>
 <p>本题得到$O(n)$解决。</p>
-<pre><code class="lang-cpp">#include&lt;cmath&gt;
+<pre><code class="cpp">#include&lt;cmath&gt;
 #include&lt;ctime&gt;
 #include&lt;queue&gt;
 #include&lt;cstdio&gt;
@@ -781,7 +761,7 @@ int main(){
 <p>$Woc$！怎么做？</p>
 <p>好在看了眼数据范围，，，哦，，，状压套个期望啊。。。</p>
 <p>倒着找，就行了。</p>
-<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+<pre><code class="cpp">#include&lt;cstdio&gt;
 #include&lt;cstdlib&gt;
 #include&lt;cstring&gt;
 #include&lt;iostream&gt;
@@ -842,7 +822,7 @@ int main(){
 <p>找环简单说一下，直接开栈记录就行了。</p>
 <p>再吐槽一下，这题我改了一下午加一晚上，还是红彤彤的，后来一气之下全员$double$，，，然后，，，它就过了。。。</p>
 <p>这题必须代码。</p>
-<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+<pre><code class="cpp">#include&lt;cstdio&gt;
 #include&lt;cstdlib&gt;
 #include&lt;cstring&gt;
 #include&lt;iostream&gt;

@@ -473,7 +473,7 @@
         
         <div class="entry-content">
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇强调<strong>应用</strong>，矩阵的基本知识有所省略。<span class="spoiler">也许会写篇基础向。。。</span></p>
-<h2 id="思想及原理"><a href="#思想及原理" class="headerlink" title="思想及原理"></a>思想及原理</h2><p>为什么Oier们能够想到用矩阵来加速DP呢？做了一些DP题之后，我们会发现，有时候DP两两状态之间的转移是<strong>定向</strong>的，也就是说，在DP转移的所有阶段中，对于一个固定的状态$f_i$，它只能转移到一个不变的状态集合$\{F_i\}$中，我们转移的方向不会因为阶段的改变而改变。</p>
+<h2 id="思想及原理"><a href="#思想及原理" class="headerlink" title="思想及原理"></a>思想及原理</h2><p>为什么Oier们能够想到用矩阵来加速DP呢？做了一些DP题之后，我们会发现，有时候DP两两状态之间的转移是<strong>定向</strong>的，也就是说，在DP转移的所有阶段中，对于一个固定的状态$f_i$，它只能转移到一个不变的状态集合${F_i}$中，我们转移的方向不会因为阶段的改变而改变。</p>
 <p>好，提炼关键信息，我们需要状态的转移，且状态转移的方式不变（不排除某些毒瘤题），并且对于大多数转移，无非就是各个状态之间的带系数运算。当需要转移的次数过多并且状态数较小时，我们就可以考虑用矩阵快速幂来优化转移。</p>
 <p>矩阵快速幂的原理及实现就当前置芝士了吧，略略略~</p>
 <p>当然，如果你需要用矩阵来优化DP，首先你还是得先推出朴素的DP式子，然后观察DP式子各个状态之间的关系，然后构造一个符合状态转移的矩阵，然后就可以快速幂了。</p>
@@ -508,24 +508,22 @@
 <p>首先，我们会发现，这两块特别的砖会把整个方格分成三个部分，我们假设左右两部分刚好是完整的（即是个矩形），那么中间的块就有性质了。</p>
 <p>仔细推一推就会发现，当这两个特殊的块间隔奇数个块时，这两个块必定在相异的两行，并且中间只有一种方案构成。</p>
 <p>同样的，当这两个特殊的块间隔偶数个块时，这两个块必定在相同的一行，并且中间也只有一种方案构成。</p>
-<p>又因为不能有相邻的边，于是计算公式就出来了。</p>
-<script type="math/tex; mode=display">
-ans = 2 * \sum_{i=0}^{n-3}\sum_{j=0}^{i}f[j]*f[i-j]</script><p>细细理解下。</p>
+<p>又因为不能有相邻的边，于是计算公式就出来了。<br>$$<br>ans = 2 <em> \sum_{i=0}^{n-3}\sum_{j=0}^{i}f[j]</em>f[i-j]<br>$$<br>细细理解下。</p>
 <p>用这个大概只能得$20pt$，我们想想怎么优化？看到$N\le 2e+9$的数据范围，当然要往矩阵快速幂上面想咯。</p>
 <p>好，<del>我不会了</del>。</p>
 <p>矩阵的推法各有不同吧，我们来一步一步来拆这个式子。</p>
 <p>设$g(i)=\sum_{j=0}^{i}f(j)*f(i-j)$。</p>
 <p>所以</p>
-<p>$\begin{equation}<br>\begin{aligned}<br>g(i)&amp;=\sum_{j=0}^{i}f(j)<em>f(i-j) \\<br>&amp;=\sum_{j=0}^{i-2}f(j)</em>f(i-j)+f(i-1)<em>f(1)+f(i)</em>f(0)\\<br>&amp;=\sum_{j=0}^{i-2}f(j)*[f(i-1-j)+f(i-2-j)]+f(i-1)+f(i)\\<br>&amp;=g(i-2)+g(i-1)+f(i)<br>\end{aligned}<br>\end{equation}$</p>
+<p>$\begin{equation}<br>\begin{aligned}<br>g(i)&amp;=\sum_{j=0}^{i}f(j)<em>f(i-j) \<br>&amp;=\sum_{j=0}^{i-2}f(j)</em>f(i-j)+f(i-1)<em>f(1)+f(i)</em>f(0)\<br>&amp;=\sum_{j=0}^{i-2}f(j)*[f(i-1-j)+f(i-2-j)]+f(i-1)+f(i)\<br>&amp;=g(i-2)+g(i-1)+f(i)<br>\end{aligned}<br>\end{equation}$</p>
 <p>又设$sum(i)=\sum_{j=0}^{i}g(j)$</p>
 <p>所以</p>
-<p>$\begin{equation}<br>\begin{aligned}<br>sum(i)&amp;=\sum_{j=0}^{i}g(j) \\<br>&amp;=\sum_{j=0}^{i-1}g(j)+g(i) \\<br>&amp;=sum(i-1)+g(i-2)+g(i-1)+f(i)<br>\end{aligned}<br>\end{equation}$</p>
+<p>$\begin{equation}<br>\begin{aligned}<br>sum(i)&amp;=\sum_{j=0}^{i}g(j) \<br>&amp;=\sum_{j=0}^{i-1}g(j)+g(i) \<br>&amp;=sum(i-1)+g(i-2)+g(i-1)+f(i)<br>\end{aligned}<br>\end{equation}$</p>
 <p>所以<del>易推</del>得矩阵转移方程：</p>
-<p>$\begin{equation}{<br>\left[ \begin{array}{ccc}<br>1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\<br>1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\<br>1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\<br>0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\<br>1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\<br>\end{array}<br>\right ]}\times {<br>\left[ \begin{array}{ccc}<br>f(i) \\<br>f(i-1) \\<br>g(i) \\<br>g(i-1) \\<br>sum(i) \\<br>\end{array}<br>\right ]}={<br>\left[ \begin{array}{ccc}<br>f(i+1)\\<br>f(i)\\<br>g(i+1)\\<br>g(i)\\<br>sum(i+1)<br>\end{array}<br>\right ]}<br>\end{equation}$</p>
+<p>$\begin{equation}{<br>\left[ \begin{array}{ccc}<br>1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\<br>1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \<br>1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \<br>0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \<br>1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \<br>\end{array}<br>\right ]}\times {<br>\left[ \begin{array}{ccc}<br>f(i) \<br>f(i-1) \<br>g(i) \<br>g(i-1) \<br>sum(i) \<br>\end{array}<br>\right ]}={<br>\left[ \begin{array}{ccc}<br>f(i+1)\<br>f(i)\<br>g(i+1)\<br>g(i)\<br>sum(i+1)<br>\end{array}<br>\right ]}<br>\end{equation}$</p>
 <p>于是$O(125logn)$可过。</p>
 <p>注意下界处理。</p>
 <p>代码：</p>
-<pre><code class="lang-cpp">#include&lt;ctime&gt;
+<pre><code class="cpp">#include&lt;ctime&gt;
 #include&lt;queue&gt;
 #include&lt;cstdio&gt;
 #include&lt;cstdlib&gt;
